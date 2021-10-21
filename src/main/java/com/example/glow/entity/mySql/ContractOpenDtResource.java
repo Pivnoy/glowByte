@@ -1,4 +1,5 @@
-package com.example.glow.entity;
+package com.example.glow.entity.mySql;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Getter
@@ -17,19 +18,18 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "CLIENT_INN", schema = "prod_ins")
-public class ClientInnResource implements Serializable {
+@Table(name = "CONTRACT_OPEN_DT", schema = "prod_ins")
+public class ContractOpenDtResource {
 
-    private static final long serialVersionUID = 4L;
+    private static final long serialVersionUID = 10L;
 
     @Id
-    @Column(name = "CLIENT_ID")
-    private Integer clientID;
+    @Column(name = "CONTRACT_ID")
+    private Integer contractId;
 
-    @Column(name = "CLIENT_INN")
-    private String clientInn;
+    @Column(name = "CONTRACT_OPEN_DT")
+    private Date contractOpenDt;
 
     @Column(name = "EFFECTIVE_FROM_DTTM")
     private Timestamp effectiveFromDttm;
-
 }

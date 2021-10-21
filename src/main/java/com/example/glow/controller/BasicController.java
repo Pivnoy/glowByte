@@ -1,9 +1,10 @@
 package com.example.glow.controller;
 
-import com.example.glow.entity.ClientResource;
+import com.example.glow.entity.mySql.ClientResource;
 import com.example.glow.service.ClientResourceDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,8 @@ public class BasicController {
         this.clientResourceDataService = clientResourceDataService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/victor")
+    @CrossOrigin
     @ResponseBody
     public ResponseEntity<List<Integer>> basicReq() {
         List<ClientResource> mt = clientResourceDataService.getAllOutputData();

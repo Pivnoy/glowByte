@@ -1,4 +1,5 @@
-package com.example.glow.entity;
+package com.example.glow.entity.mySql;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,24 +8,25 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.*;
+import java.sql.Timestamp;
+
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "CLIENT_BIRTH_DT", schema = "prod_ins")
-public class ClientBirthDtResource implements Serializable {
+@Table(name = "CLIENT_CITIZENSHIP", schema = "prod_ins")
+public class ClientCitizenshipResource implements Serializable {
 
-    private static final long serialVersionUID = 2L;
+    private static final long serialVersionUID = 3L;
 
     @Id
     @Column(name = "CLIENT_ID")
     private Integer clientId;
 
-    @Column(name = "CLIENT_BIRTH_DT")
-    private Date clientBirthDt;
+    @Column(name = "CLIENT_CITIZENSHIP")
+    private String clientCitizenship;
 
     @Column(name = "EFFECTIVE_FROM_DTTM")
     private Timestamp effectiveFromDttm;

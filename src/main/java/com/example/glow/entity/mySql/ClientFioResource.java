@@ -1,4 +1,4 @@
-package com.example.glow.entity;
+package com.example.glow.entity.mySql;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
