@@ -5,26 +5,29 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
-import java.sql.*;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "CLIENT_BIRTH_DT", schema = "prod_ins")
-public class ClientBirthDtResource implements Serializable {
+@Table(name = "CLIENT_FIO", schema = "prod_ins")
+public class ClientFioResource implements Serializable {
 
-    private static final long serialVersionUID = 2L;
+    private static final long serialVersionUID = 4L;
 
     @Id
     @Column(name = "CLIENT_ID")
     private Integer clientId;
 
-    @Column(name = "CLIENT_BIRTH_DT")
-    private Date clientBirthDt;
+    @Column(name = "CLIENT_FIO")
+    private String clientFio;
 
     @Column(name = "EFFECTIVE_FROM_DTTM")
     private Timestamp effectiveFromDttm;
