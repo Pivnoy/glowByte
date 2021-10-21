@@ -1,0 +1,10 @@
+com/example/glow/entity/ClientCitizenshipResource.class
+com/example/glow/entity/ClientResource.class
+com/example/glow/entity/ClientBirthDtResource.class
+com/example/glow/GlowApplication.class
+com/example/glow/service/ClientResourceDataService.class
+com/example/glow/entity/ClientFioResource.class
+com/example/glow/entity/ContractCloseDt.class
+com/example/glow/repository/CustomizedClientResourceCrudRepository.class
+com/example/glow/controller/BasicController.class
+com/example/glow/entity/ClientInnResource.class

@@ -1,0 +1,10 @@
+/home/max/glowByte/src/main/java/com/example/glow/service/ClientResourceDataService.java
+/home/max/glowByte/src/main/java/com/example/glow/GlowApplication.java
+/home/max/glowByte/src/main/java/com/example/glow/entity/ClientBirthDtResource.java
+/home/max/glowByte/src/main/java/com/example/glow/controller/BasicController.java
+/home/max/glowByte/src/main/java/com/example/glow/entity/ClientInnResource.java
+/home/max/glowByte/src/main/java/com/example/glow/entity/ClientCitizenshipResource.java
+/home/max/glowByte/src/main/java/com/example/glow/entity/ClientResource.java
+/home/max/glowByte/src/main/java/com/example/glow/entity/ClientFioResource.java
+/home/max/glowByte/src/main/java/com/example/glow/repository/CustomizedClientResourceCrudRepository.java
+/home/max/glowByte/src/main/java/com/example/glow/entity/ContractCloseDt.java
