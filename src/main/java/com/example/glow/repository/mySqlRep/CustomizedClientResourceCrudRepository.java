@@ -1,4 +1,4 @@
-package com.example.glow.repository;
+package com.example.glow.repository.mySqlRep;
 
 import com.example.glow.entity.mySql.ClientResource;
 import org.springframework.data.jpa.repository.Query;
