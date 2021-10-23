@@ -11,7 +11,6 @@ return (
         </div>
         <Interviews />
     </>
-   
   );
 };
 export default App;
