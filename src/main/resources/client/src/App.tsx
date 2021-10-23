@@ -5,10 +5,13 @@ import './style.scss';
 
 const App: React.FC = () => {
 return (
-    <div className="wrapper">
-        <h1>To the moon!🚀</h1>
+    <>
+        <div className="wrapper">
+            <h1>To the moon!🚀</h1>
+        </div>
         <Interviews />
-    </div>
+    </>
+   
   );
 };
 export default App;
