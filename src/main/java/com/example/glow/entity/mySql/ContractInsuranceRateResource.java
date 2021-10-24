@@ -24,7 +24,7 @@ public class ContractInsuranceRateResource implements Serializable {
 
     @Id
     @Column(name = "CONTRACT_ID")
-    private Integer contractId;
+    private Long contractId;
 
     @Column(name = "CONTRACT_INSURANCE_RATE", precision = 12, scale = 4)
     private Double contractInsuranceRate;

@@ -23,7 +23,7 @@ public class ClientCitizenshipResource implements Serializable {
 
     @Id
     @Column(name = "CLIENT_ID")
-    private Integer clientId;
+    private Long clientId;
 
     @Column(name = "CLIENT_CITIZENSHIP")
     private String clientCitizenship;

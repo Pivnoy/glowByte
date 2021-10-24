@@ -23,10 +23,10 @@ public class InsutanceContractXPledgeResource {
 
     @Id
     @Column(name = "CONTRACT_ID")
-    private Integer contractId;
+    private Long contractId;
 
     @Column(name = "PLEDGE_ID")
-    private Integer clientId;
+    private Long clientId;
 
     @Column(name = "EFFECTIVE_FROM_DTTM")
     private Timestamp effectiveFromDttm;

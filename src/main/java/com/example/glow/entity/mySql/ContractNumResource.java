@@ -24,7 +24,7 @@ public class ContractNumResource {
 
     @Id
     @Column(name = "CONTRACT_ID")
-    private Integer contractId;
+    private Long contractId;
 
     @Column(name = "CONTRACT_NUM")
     private String contractNum;

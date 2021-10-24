@@ -23,7 +23,7 @@ public class InsuranceProductRiskResource {
 
     @Id
     @Column(name = "INSURANCE_PRODUCT_ID")
-    private Integer insuranceProductId;
+    private Long insuranceProductId;
 
     @Column(name = "INSURANCE_PRODUCT_RISK", precision = 12, scale = 4)
     private Double insuranceProductRisk;

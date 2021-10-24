@@ -20,9 +20,9 @@ public class PledgeXCollateral {
 
     @Id
     @Column(name = "pledge_id")
-    private Integer pledgeId;
+    private Long pledgeId;
 
     @Column(name = "collateral_id")
-    private Integer collateralId;
+    private Long collateralId;
 
 }

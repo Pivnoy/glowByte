@@ -23,7 +23,7 @@ public class PledgeDiscountResource {
 
     @Id
     @Column(name = "PLEDGE_ID")
-    private Integer pledgeId;
+    private Long pledgeId;
 
     @Column(name = "PLEDGE_DISCONT", precision = 12, scale = 4)
     private Double pledgeDiscont;

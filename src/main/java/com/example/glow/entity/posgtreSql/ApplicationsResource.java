@@ -22,7 +22,7 @@ public class ApplicationsResource {
 
     @Id
     @Column(name = "app_id")
-    private Integer appId;
+    private Long appId;
 
     @Column(name = "app_date")
     private Timestamp appDate;
@@ -46,7 +46,7 @@ public class ApplicationsResource {
     private String custFio;
 
     @Column(name = "cust_id")
-    private Integer custId;
+    private Long custId;
 
     @Column(name = "cust_birth")
     private Date custBitrh;

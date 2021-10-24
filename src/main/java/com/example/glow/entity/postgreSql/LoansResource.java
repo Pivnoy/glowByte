@@ -43,5 +43,4 @@ public class LoansResource {
 
     @Column(name = "close_fact_dt")
     private Date closeFactDt;
-
 }

@@ -23,7 +23,7 @@ public class PledgeTypeResource {
 
     @Id
     @Column(name = "PLEDGE_ID")
-    private Integer pledgeId;
+    private Long pledgeId;
 
     @Column(name = "PLEDGE_TYPE")
     private String pledgeType;

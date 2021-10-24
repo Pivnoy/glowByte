@@ -23,7 +23,7 @@ public class InsuranceProduct3GroupResource {
 
     @Id
     @Column(name = "INSURANCE_PRODUCT_ID")
-    private Integer insuranceProductId;
+    private Long insuranceProductId;
 
     @Column(name = "INSURANCE_PRODUCT_3_GROUP")
     private String insuranceProduct3Group;

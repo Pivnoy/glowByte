@@ -22,7 +22,7 @@ public class ClientResource implements Serializable {
 
     @Id
     @Column(nullable = false, name = "CLIENT_ID")
-    private Integer clientID;
+    private Long clientID;
 
     @Column(nullable = false, name = "EFFECTIVE_FROM_DTTM")
     private Timestamp effectiveFromDttm;

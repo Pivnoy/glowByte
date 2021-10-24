@@ -20,7 +20,7 @@ public class CollateralsResource {
 
     @Id
     @Column(name = "collateral_id")
-    private Integer collateralId;
+    private Long collateralId;
 
     @Column(name = "collateral_type")
     private String collateralType;
@@ -29,6 +29,6 @@ public class CollateralsResource {
     private Double collateralAmt;
 
     @Column(name = "loan_id")
-    private Integer loanId;
+    private Long loanId;
 
 }

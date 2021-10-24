@@ -24,7 +24,7 @@ public class InsuranceProductResource implements Serializable {
 
     @Id
     @Column(name = "INSURANCE_PRODUCT_ID")
-    private Integer insuranceProductId;
+    private Long insuranceProductId;
 
     @Column(name = "EFFECTIVE_FROM_DTTM")
     private Timestamp effectiveFromDttm;

@@ -21,7 +21,7 @@ public class ClientsResource {
 
     @Id
     @Column(name = "client_id")
-    private Integer clientId;
+    private Long clientId;
 
     @Column(name = "fio")
     private String fio;

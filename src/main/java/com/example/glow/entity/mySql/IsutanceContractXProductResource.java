@@ -23,10 +23,10 @@ public class IsutanceContractXProductResource {
 
     @Id
     @Column(name = "CONTRACT_ID")
-    private Integer contractId;
+    private Long contractId;
 
     @Column(name = "INSURANCE_PRODUCT_ID")
-    private Integer insuranceProductId;
+    private Long insuranceProductId;
 
     @Column(name = "EFFECTIVE_FROM_DTTM")
     private Timestamp effectiveFromDttm;

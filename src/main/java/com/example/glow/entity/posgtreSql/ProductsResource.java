@@ -20,7 +20,7 @@ public class ProductsResource {
 
     @Id
     @Column(name = "product_id")
-    private Integer productId;
+    private Long productId;
 
     @Column(name = "product_1_group")
     private String product1Group;

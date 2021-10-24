@@ -22,12 +22,12 @@ public class BasicController {
         this.clientResourceDataService = clientResourceDataService;
     }
 
-    @GetMapping("/victor")
+    @GetMapping("/mysql")
     @CrossOrigin
     @ResponseBody
-    public ResponseEntity<List<Integer>> basicReq() {
+    public ResponseEntity<List<Long>> basicReq() {
         List<ClientResource> mt = clientResourceDataService.getAllOutputData();
-        List<Integer> res = new ArrayList<>();
+        List<Long> res = new ArrayList<>();
         for (ClientResource clientResource: mt) {
             res.add(clientResource.getClientID());
         }

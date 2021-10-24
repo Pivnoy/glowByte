@@ -25,7 +25,7 @@ public class ContractOpenDtResource {
 
     @Id
     @Column(name = "CONTRACT_ID")
-    private Integer contractId;
+    private Long contractId;
 
     @Column(name = "CONTRACT_OPEN_DT")
     private Date contractOpenDt;

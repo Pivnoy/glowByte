@@ -22,19 +22,19 @@ public class LoansResource {
 
     @Id
     @Column(name = "loan_id")
-    private Integer loanId;
+    private Long loanId;
 
     @Column(name = "interest_rate",precision = 12,scale = 4)
     private Double interestRate;
 
     @Column(name = "client_id")
-    private Integer clientId;
+    private Long clientId;
 
     @Column(name = "repayment_mode")
     private String repaymentMode;
 
     @Column(name = "product_id")
-    private Integer productId;
+    private Long productId;
 
     @Column(name = "begin_dt")
     private Date beginDt;

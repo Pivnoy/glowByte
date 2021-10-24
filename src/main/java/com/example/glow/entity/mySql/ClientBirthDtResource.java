@@ -21,7 +21,7 @@ public class ClientBirthDtResource implements Serializable {
 
     @Id
     @Column(name = "CLIENT_ID")
-    private Integer clientId;
+    private Long clientId;
 
     @Column(name = "CLIENT_BIRTH_DT")
     private Date clientBirthDt;

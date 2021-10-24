@@ -24,7 +24,7 @@ public class ClientInnResource implements Serializable {
 
     @Id
     @Column(name = "CLIENT_ID")
-    private Integer clientID;
+    private Long clientID;
 
     @Column(name = "CLIENT_INN")
     private String clientInn;

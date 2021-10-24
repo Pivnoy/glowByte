@@ -21,7 +21,7 @@ public class LoanBalanceResource {
 
     @Id
     @Column(name = "loan_id")
-    private Integer loanId;
+    private Long loanId;
 
     @Column(name = "od_amt",precision = 18,scale = 2)
     private Double odAmt;

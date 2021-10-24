@@ -23,7 +23,7 @@ public class IsutanceContractResource {
 
     @Id
     @Column(name = "CONTRACT_ID")
-    private Integer contractId;
+    private Long contractId;
 
     @Column(name = "EFFECTIVE_FROM_DTTM")
     private Timestamp effectiveFromDttm;

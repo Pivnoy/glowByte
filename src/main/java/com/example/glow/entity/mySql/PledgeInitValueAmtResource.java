@@ -23,7 +23,7 @@ public class PledgeInitValueAmtResource {
 
     @Id
     @Column(name = "PLEDGE_ID")
-    private Integer pledgeId;
+    private Long pledgeId;
 
     @Column(name = "PLEDGE_INIT_VALUE_AMT", precision = 18, scale = 2)
     private Double pledgeInitValueAmt;
