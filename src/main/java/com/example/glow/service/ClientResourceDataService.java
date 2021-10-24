@@ -1,7 +1,7 @@
 package com.example.glow.service;
 
 import com.example.glow.entity.mySql.ClientResource;
-import com.example.glow.repository.CustomizedClientResourceCrudRepository;
+import com.example.glow.repository.mySqlRep.CustomizedClientResourceCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

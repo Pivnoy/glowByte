@@ -1,0 +1,16 @@
+
+.Message {
+    padding: 5px;
+    width: 45%;
+    text-align: justify;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #eef2f5;
+
+    &_position_left {
+        align-self: flex-start;
+    }
+
+    &_position_right {
+        align-self: flex-end;
+    }
+}
