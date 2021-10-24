@@ -1,3 +1,5 @@
+com/example/glow/entity/posgtreSql/ClientsResource.class
+com/example/glow/entity/posgtreSql/ApplicationsResource.class
 com/example/glow/entity/mySql/InsuranceProductRiskResource.class
 com/example/glow/GlowApplication.class
 com/example/glow/repository/CustomizedClientResourceCrudRepository.class
@@ -7,7 +9,12 @@ com/example/glow/entity/mySql/InsutanceContractXPledgeResource.class
 com/example/glow/controller/BasicController.class
 com/example/glow/entity/mySql/IsutanceContractXProductResource.class
 com/example/glow/entity/mySql/IsutanceContractXClientResource.class
+com/example/glow/entity/posgtreSql/ProductsResource.class
+com/example/glow/entity/posgtreSql/CollateralsResource.class
+com/example/glow/entity/posgtreSql/LoansResource.class
 com/example/glow/entity/mySql/PledgeInitValueAmtResource.class
 com/example/glow/entity/mySql/PledgeDiscountResource.class
+com/example/glow/entity/posgtreSql/LoanBalanceResource.class
 com/example/glow/service/ClientResourceDataService.class
+com/example/glow/entity/posgtreSql/PledgeXCollateral.class
 com/example/glow/entity/mySql/PledgeResource.class
