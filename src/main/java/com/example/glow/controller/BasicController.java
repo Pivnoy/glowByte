@@ -25,12 +25,7 @@ public class BasicController {
     @GetMapping("/mysql")
     @CrossOrigin
     @ResponseBody
-    public ResponseEntity<List<Long>> basicReq() {
-        List<ClientResource> mt = clientResourceDataService.getAllOutputData();
-        List<Long> res = new ArrayList<>();
-        for (ClientResource clientResource: mt) {
-            res.add(clientResource.getClientID());
-        }
-        return ResponseEntity.ok(res);
+    public ResponseEntity<List<ClientResource>> basicReq() {
+        return ResponseEntity.ok(clientResourceDataService.getAllOutputData());
     }
 }

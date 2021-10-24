@@ -26,12 +26,7 @@ public class PostController {
     @GetMapping("/post")
     @CrossOrigin
     @ResponseBody
-    public ResponseEntity<List<String>> getAnswer() {
-        List<LoansResource> mt = loansResourceDataService.getAllOutputData();
-        List<String> res = new ArrayList<>();
-        for (LoansResource ls : mt) {
-            res.add(ls.getRepaymentMode().trim());
-        }
-        return ResponseEntity.ok(res);
+    public ResponseEntity<List<LoansResource>> getAnswer() {
+        return ResponseEntity.ok(loansResourceDataService.getAllOutputData());
     }
 }

@@ -5,6 +5,7 @@ import com.example.glow.repository.mySqlRep.CustomizedClientResourceCrudReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,6 +19,8 @@ public class ClientResourceDataService {
     }
 
     public List<ClientResource> getAllOutputData(){
-        return customizedClientResourceCrudRepository.loadAllDataBase();
+        List<ClientResource> retList = new ArrayList<>();
+        customizedClientResourceCrudRepository.findAll().forEach(retList::add);
+        return retList;
     }
 }

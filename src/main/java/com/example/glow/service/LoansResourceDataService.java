@@ -5,6 +5,7 @@ import com.example.glow.repository.postgreSqlRep.LoansResourceCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,6 +19,8 @@ public class LoansResourceDataService {
     }
 
     public List<LoansResource>  getAllOutputData(){
-        return loansResourceCrudRepository.loadAllDataBase();
+        List<LoansResource> loans = new ArrayList<>();
+        loansResourceCrudRepository.findAll().forEach(loans::add);
+        return loans;
     }
 }

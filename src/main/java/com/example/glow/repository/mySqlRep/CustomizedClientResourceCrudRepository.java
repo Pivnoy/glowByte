@@ -10,7 +10,5 @@ import java.util.List;
 @Repository
 public interface CustomizedClientResourceCrudRepository extends CrudRepository<ClientResource,Long> {
 
-    @Query(value = "select * from CLIENT", nativeQuery = true)
-    List<ClientResource> loadAllDataBase();
 
 }

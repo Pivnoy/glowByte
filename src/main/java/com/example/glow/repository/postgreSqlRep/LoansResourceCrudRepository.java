@@ -10,6 +10,4 @@ import java.util.List;
 @Repository
 public interface LoansResourceCrudRepository extends CrudRepository<LoansResource, Integer> {
 
-    @Query(value = "select * from prod_loans.loans", nativeQuery = true)
-    List<LoansResource> loadAllDataBase();
 }
