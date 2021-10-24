@@ -20,10 +20,17 @@ import java.util.Map;
 public class InterviewResource {
 
     @Id
-    private String id;
+    @Field(value = "_id")
+    private Long id;
 
-    private String answersOnQuestions;
-    private String appId;
+    @Field(value = "answers_on_questions")
+    private Map<String, String> answersOnQuestions;
+
+
+    @Field(value = "app_id")
+    private Long appId;
+
+    @Field(value = "interview_datetime")
     private String interviewDatetime;
 
 }
