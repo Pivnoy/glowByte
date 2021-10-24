@@ -7,6 +7,7 @@
 /home/max/glowByte/src/main/java/com/example/glow/entity/mySql/PledgeDiscountResource.java
 /home/max/glowByte/src/main/java/com/example/glow/entity/postgreSql/LoansResource.java
 /home/max/glowByte/src/main/java/com/example/glow/controller/MongoController.java
+/home/max/glowByte/src/main/java/com/example/glow/controller/MySqlController.java
 /home/max/glowByte/src/main/java/com/example/glow/configuration/mySql/MySqlDataSourceConfiguration.java
 /home/max/glowByte/src/main/java/com/example/glow/GlowApplication.java
 /home/max/glowByte/src/main/java/com/example/glow/entity/mySql/IsutanceContractXClientResource.java
@@ -34,7 +35,6 @@
 /home/max/glowByte/src/main/java/com/example/glow/repository/mongoDbRep/InterviewResourceRepository.java
 /home/max/glowByte/src/main/java/com/example/glow/entity/mySql/ContractNumResource.java
 /home/max/glowByte/src/main/java/com/example/glow/entity/mySql/IsutanceContractXProductResource.java
-/home/max/glowByte/src/main/java/com/example/glow/controller/BasicController.java
 /home/max/glowByte/src/main/java/com/example/glow/repository/postgreSqlRep/LoansResourceCrudRepository.java
 /home/max/glowByte/src/main/java/com/example/glow/entity/mySql/PledgeTypeResource.java
 /home/max/glowByte/src/main/java/com/example/glow/service/LoansResourceDataService.java

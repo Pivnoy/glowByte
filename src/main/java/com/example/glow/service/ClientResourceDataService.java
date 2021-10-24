@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Lagus Maksim, Makarev Evgenij
+ * @version 1.0
+ */
 @Service
 public class ClientResourceDataService {
 
@@ -18,6 +22,10 @@ public class ClientResourceDataService {
         this.customizedClientResourceCrudRepository = customizedClientResourceCrudRepository;
     }
 
+    /**
+     * Gets all clients from database table mySql
+     * @return list of all clients from database
+     */
     public List<ClientResource> getAllOutputData(){
         List<ClientResource> retList = new ArrayList<>();
         customizedClientResourceCrudRepository.findAll().forEach(retList::add);

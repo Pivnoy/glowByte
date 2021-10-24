@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * @author Lagus Maksim, Makarev Evgenij
+ * @version 1.0
+ */
 @Service
 public class LoansResourceDataService {
 
@@ -18,6 +23,10 @@ public class LoansResourceDataService {
         this.loansResourceCrudRepository = loansResourceCrudRepository;
     }
 
+    /**
+     * Gets all loans from database table Loans
+     * @return list of loans from database
+     */
     public List<LoansResource>  getAllOutputData(){
         List<LoansResource> loans = new ArrayList<>();
         loansResourceCrudRepository.findAll().forEach(loans::add);

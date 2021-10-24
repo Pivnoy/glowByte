@@ -13,6 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Lagus Maksim, Makarev Evgenij
+ * @version 1.0
+ * Main controller for postgreSql database encapsulating all
+ * get methods from multiple CRUD repositories and connecting
+ * backend and local host server via mapping
+ */
 @RestController
 public class PostController {
 
@@ -23,6 +30,10 @@ public class PostController {
         this.loansResourceDataService = loansResourceDataService;
     }
 
+    /**
+     * Get data from services and pack it in a form for response to front-end
+     * @return list of all crucial data from postgreSql database
+     */
     @GetMapping("/post")
     @CrossOrigin
     @ResponseBody
