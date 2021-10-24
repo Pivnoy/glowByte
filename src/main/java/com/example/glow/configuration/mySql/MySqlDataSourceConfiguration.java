@@ -1,4 +1,4 @@
-package com.example.glow.configuration;
+package com.example.glow.configuration.mySql;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
