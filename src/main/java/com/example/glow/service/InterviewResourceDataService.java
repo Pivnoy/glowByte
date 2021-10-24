@@ -12,11 +12,10 @@ public class InterviewResourceDataService {
 
     private InterviewResourceRepository interviewResourceRepository;
 
+    @Autowired
     public InterviewResourceDataService(InterviewResourceRepository interviewResourceRepository) {
         this.interviewResourceRepository = interviewResourceRepository;
     }
-
-    @Autowired
 
 
     public List<InterviewResource>  getAllOutputData(){
