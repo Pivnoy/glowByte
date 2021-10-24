@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import modalReducer from '../components/Modal/modalSlice';
+import interviewsReducer from '../components/Interviews/interviewsSlice';
 
 export const store = configureStore({
     reducer: {
-        modal: modalReducer
+        modal: modalReducer,
+        interviews: interviewsReducer
     }
 })
 
