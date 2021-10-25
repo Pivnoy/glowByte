@@ -1,0 +1,18 @@
+
+.Item {
+    height: 60px;
+    width: 100%;
+    padding-left: 5px;
+
+    justify-content: center;
+
+    .MuiButton-root {
+        align-self: baseline;
+    }
+
+    &:hover {
+        cursor: pointer;
+        outline: 1px solid;
+        background-color: white;
+    }
+}
