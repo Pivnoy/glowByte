@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="lexa" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="leha" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="lexa">
+      <paths name="leha">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/evg/glowByteMax" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
