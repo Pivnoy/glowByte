@@ -44,7 +44,7 @@ const config: Configuration = {
   devServer: {
     static: path.join(__dirname, "build"),
     compress: true,
-    port: 4022,
+    port: 3000,
   },
   plugins: [
     new HtmlWebpackPlugin({
