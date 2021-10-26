@@ -31,7 +31,7 @@ public class ApplicationsResource {
     private Double credAmount;
 
     @Column(name = "cred_term")
-    private Timestamp credTerm;
+    private Long credTerm;
 
     @Column(name = "cred_object")
     private String credObject;

@@ -9,6 +9,7 @@ interface IHeaderProps extends IClassNameProps {
 }
 
 const cnHeader = cn('Header');
+const headerCn = cnHeader();
 
 export const Header: React.FC<IHeaderProps> = (props) => {
     const { children, className } = props;

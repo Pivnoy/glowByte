@@ -14,6 +14,6 @@ import java.util.List;
  * and to get Loans table
  */
 @Repository
-public interface LoansResourceCrudRepository extends CrudRepository<LoansResource, Integer> {
+public interface LoansResourceCrudRepository extends CrudRepository<LoansResource, Long> {
 
 }

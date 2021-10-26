@@ -19,12 +19,6 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Makarev Evgenij, Lagus Maxim
- * This class of this custom configuration
- * for the MySQL and add this configuration
- * to make multiple resources access to Hikari pool
- * */
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
@@ -34,10 +28,6 @@ import java.util.Map;
 )
 public class MySqlDataSourceConfiguration {
 
-    /**
-     * @author Makarev Evgenij, Lagus Maxim
-     * @return example of MySQLDataSourceProperty
-     * */
     @Primary
     @Bean( name = "mysqlDataSourceProperties")
     @ConfigurationProperties("spring.datasource-mysql")
@@ -45,10 +35,6 @@ public class MySqlDataSourceConfiguration {
         return new DataSourceProperties();
     }
 
-    /**
-     * @author Makarev Evgenij, Lagus Maxim
-     * @return example of MySQLDataSource
-     * */
     @Primary
     @Bean(name = "mysqlDataSource")
     @ConfigurationProperties("spring.datasource-mysql.configuration")
@@ -56,10 +42,6 @@ public class MySqlDataSourceConfiguration {
         return mysqlDataSourceProperties.initializeDataSourceBuilder().type(HikariDataSource.class).build();
     }
 
-    /**
-     * @author Makarev Evgenij, Lagus Maxim
-     * @return example of MySQLEntityManagerFactory
-     * */
     @Primary
     @Bean(name = "mysqlEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean mysqlEntityManagerFactory(EntityManagerFactoryBuilder mysqlEntityManagerFactoryBuilder, @Qualifier("mysqlDataSource") DataSource mysqlDataSource) {
@@ -75,10 +57,6 @@ public class MySqlDataSourceConfiguration {
                 .build();
     }
 
-    /**
-     * @author Makarev Evgenij, Lagus Maxim
-     * @return example of MySQLEntityManagerFactory
-     * */
     @Primary
     @Bean(name = "mysqlTransactionManager")
     public PlatformTransactionManager primaryTransactionManager(

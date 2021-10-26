@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3d323c54-feab-416a-8475-43a57916e922" name="lexa">
+        <fileTransfer rootFolder="/home/evg/glowByte" accessType="SFTP" host="joeyke.ru" port="4022" sshConfigId="fad6d01e-07a3-4136-af45-5c0dce76510a" sshConfig="evg@joeyke.ru:4022 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

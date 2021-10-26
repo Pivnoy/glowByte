@@ -1,13 +1,19 @@
 import React from "react";
 import { Interviews } from "./components/Interviews/Interviews";
-import { MainPage } from "./pages/MainPage";
+import { Modal } from '@mui/material';
+import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 
-import './index.scss';
+import './style.scss';
 
 const App: React.FC = () => {
     
 return (
-    <MainPage></MainPage>
-  )
+    <>  
+        <div className="wrapper">
+            <h1>To the moon!🚀</h1>
+        </div>
+        <Interviews />
+    </>
+  );
 };
 export default App;
