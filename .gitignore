@@ -1,3 +1,6 @@
 src/main/resources/client/node_modules/
 src/main/resources/client/package-lock.json
 target
+logs.txt
+1
+Dockerfile

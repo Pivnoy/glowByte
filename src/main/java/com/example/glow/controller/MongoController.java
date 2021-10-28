@@ -1,15 +1,15 @@
 package com.example.glow.controller;
 
 import com.example.glow.entity.mongoDb.InterviewResource;
+import com.example.glow.entity.postgreSql.ApplicationsResource;
 import com.example.glow.service.InterviewResourceDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Lagus Maksim, Makarev Evgenij
@@ -32,10 +32,16 @@ public class MongoController {
      * Get data from services and pack it in a Json-form for response to front-end
      * @return list of all crucial data from MongoDB database
      */
-    @GetMapping("/mongo")
+    @GetMapping("/interview")
     @CrossOrigin
     @ResponseBody
-    public ResponseEntity<List<InterviewResource>> getAl() {
-        return ResponseEntity.ok(interviewResourceDataService.getAllOutputData());
+    public ResponseEntity<InterviewResource> getAl(@RequestParam(name = "id") Long id) {
+        List<InterviewResource> nm = new ArrayList<>(interviewResourceDataService.getAllOutputData());
+        for (InterviewResource interviewResource:nm){
+            if (Objects.equals(interviewResource.getId(), id)){
+                return ResponseEntity.ok(interviewResource);
+            }
+        }
+        return ResponseEntity.ok(null);
     }
 }
