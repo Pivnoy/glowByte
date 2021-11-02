@@ -17,7 +17,7 @@ export interface ITextProps extends IClassNameProps {
     g?: boolean,
 
     firstLetter?: boolean,
-
+    left?: boolean
     center?: boolean;
     onClick?: () => void;
 }

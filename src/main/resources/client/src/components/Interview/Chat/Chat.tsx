@@ -17,9 +17,6 @@ export const Chat: React.FC<IChatProps> = (props) => {
     const { dialog, preview = false } = props;
 
     const renderChat = useCallback(() => {
-        console.log('here')
-        console.log(Object.keys(dialog));
-
         // const zeroExists = dialog['I0'] || dialog['A0'];
 
         const firstTurn = Boolean(dialog['I0']);
@@ -54,8 +51,6 @@ export const Chat: React.FC<IChatProps> = (props) => {
             messages.push(first);
             messages.push(second);
         }
-
-        console.log(messages.length)
 
         return (
             <>
