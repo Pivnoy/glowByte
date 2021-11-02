@@ -1,19 +1,22 @@
 import React from "react";
 import { Interviews } from "./components/Interviews/Interviews";
-import { Modal } from '@mui/material';
-import { useAppDispatch, useAppSelector } from "./hooks/hooks";
+import { Container } from "./components/Container";
+import { Navigation } from "./components/Navigation";
+import { useAppSelector } from "./hooks/hooks";
+import { AllPages } from "./pages/pages";
 
-import './style.scss';
+import './index.scss';
 
 const App: React.FC = () => {
+    const { page } = useAppSelector(state => state.pages);
     
-return (
-    <>  
-        <div className="wrapper">
-            <h1>To the moon!🚀</h1>
-        </div>
-        <Interviews />
-    </>
-  );
-};
+    const PageToRender = AllPages[page];
+
+    return (
+        <Container flexDirection='row'>
+            <Navigation />
+            <PageToRender />
+        </Container>
+    )};
+
 export default App;

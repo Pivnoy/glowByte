@@ -27,14 +27,7 @@ export const Interviews: React.FC<IInterviewsProps> = () => {
     const { interviews } = useAppSelector(state => state.interviews);
     const { open } = useAppSelector(state => state.modal);
     const dispatch = useAppDispatch();
-    useEffect(() => {
-        // setInterviews(interviewPlaceholder);
-        dispatch(setInterviews(interviewPlaceholder));
-    }, [])
 
-    console.log(interviews);
-    interviews.length && console.log(Object.keys(interviews[0].answers_on_questions));
-    
     const onInterviewClick = useCallback((id: number) => {
         setChosenInterview(id);
         dispatch(show());
@@ -49,7 +42,6 @@ export const Interviews: React.FC<IInterviewsProps> = () => {
     }, [])
 
     const renderHeader = useCallback(() => {
-        console.log(interviews.length);
         return (
             <Header className={cnInterviewsHeader}>
                 <Text xxl>Интервью</Text>
@@ -69,7 +61,6 @@ export const Interviews: React.FC<IInterviewsProps> = () => {
                 open={open}
                 onClose={onModalClose}
             >
-                {renderHeader()}
                 <Interview 
                     id={chosenInterview}
                     interview={interviews[chosenInterview]}
@@ -86,7 +77,7 @@ export const Interviews: React.FC<IInterviewsProps> = () => {
                         onClick={onInterviewClick}
                     />
                 ))}
-            </Container>  
+            </Container>
         </>
     )
 }

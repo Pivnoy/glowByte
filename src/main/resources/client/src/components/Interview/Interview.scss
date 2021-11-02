@@ -3,10 +3,16 @@
     width: 500px;
     box-sizing: border-box;
 
+    padding: 10px;
+
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-    &_preview:hover {
-        cursor: pointer;
-        outline: 1px solid;
+    &_preview {
+        margin-bottom: 10px;
+
+        &:hover {
+            cursor: pointer;
+            outline: 1px solid #6ab6ef;
+        }
     }
 }

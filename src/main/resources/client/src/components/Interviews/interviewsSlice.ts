@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Interview } from "../Interview/types";
+import { interviewPlaceholder } from '../../utils/interviewPlaceholder';
 
 interface InterviewsState {
     interviews: Interview[]

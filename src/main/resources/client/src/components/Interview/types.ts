@@ -1,6 +1,6 @@
 export type Interview = {
-    _id: number,
-    interview_datetime: string,
-    app_id: number,
-    answers_on_questions: object
+    id: number,
+    interviewDatetime: string,
+    appId: number,
+    answersOnQuestions: object
 }

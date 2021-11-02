@@ -25,10 +25,10 @@ export const Interview: React.FC<IInterviewProps> = (props) => {
         return (
             <>
                 <Header>
-                    <Text>id: {interview._id}</Text>
-                    <Text>{interview.interview_datetime}</Text>
+                    <Text>id: {interview.id}</Text>
+                    <Text>{interview.interviewDatetime}</Text>
                 </Header>
-                <Chat preview dialog={interview.answers_on_questions}/>
+                <Chat preview dialog={interview.answersOnQuestions}/>
             </>
         )
     }, [interview])
@@ -37,10 +37,10 @@ export const Interview: React.FC<IInterviewProps> = (props) => {
         return (
             <>
                 <Header>
-                    <Text>id: {interview._id}</Text>
-                    <Text>{interview.interview_datetime}</Text>
+                    <Text>id: {interview.id}</Text>
+                    <Text>{interview.interviewDatetime}</Text>
                 </Header>
-                <Chat dialog={interview.answers_on_questions}/>
+                <Chat dialog={interview.answersOnQuestions}/>
             </>
         )
     }, [interview])

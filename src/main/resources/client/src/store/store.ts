@@ -1,11 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import modalReducer from '../components/Modal/modalSlice';
 import interviewsReducer from '../components/Interviews/interviewsSlice';
+import pagesReducer from '../pages/pagesSlice';
+import profileReducer from '../components/Profile/profileSlice';
 
 export const store = configureStore({
     reducer: {
         modal: modalReducer,
-        interviews: interviewsReducer
+        interviews: interviewsReducer,
+        pages: pagesReducer,
+        profile: profileReducer
     }
 })
 
