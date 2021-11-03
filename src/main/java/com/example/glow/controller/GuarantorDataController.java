@@ -67,8 +67,10 @@ public class GuarantorDataController {
                     .guarantorBirth(fio_sorted_res.get(0).getGuarantorBirth())
                     .guarantorPhone(fio_sorted_res.get(0).getGuarantorPhone())
                     .custFio(fio_sorted_res.get(0).getCustFio()).build();
+            System.out.println("Guarantor data request with " + fio + ", returning " + res.get(0).getGuarantorFio());
             return ResponseEntity.ok(guarantorBoolData);
         }
+        System.out.println("Guarantor data request with " + fio + ", returning null");
         return ResponseEntity.ok(null);
     }
 }

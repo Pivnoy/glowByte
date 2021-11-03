@@ -35,8 +35,10 @@ public class BaseController {
         String customPredicate = fio.toLowerCase().trim();
         List<BaseData> res = baseService.getData().stream().filter(val -> val.getCustFio().toLowerCase().trim().equals(customPredicate)).collect(Collectors.toList());
         if (res.size() > 0) {
+            System.out.println("Client data request with " + fio + ", returning " + res.get(0).getCustId());
             return ResponseEntity.ok(res.get(0));
         }
+        System.out.println("Client data request with " + fio + ", returning null");
         return ResponseEntity.ok(null);
     }
 }

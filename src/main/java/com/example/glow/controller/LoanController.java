@@ -46,8 +46,10 @@ public class LoanController {
         }
         List<LoansData> fio_filtrated_result= result.stream().filter(val -> val.getCustFio().toLowerCase().trim().equals(customPredicate)).collect(Collectors.toList());
         if (fio_filtrated_result.size()>0) {
+            System.out.println("Loan data request with " + fio + ", returning " + fio_filtrated_result.get(0).getAppId());
             return ResponseEntity.ok(fio_filtrated_result.get(0));
         }
+        System.out.println("Loan data request with " + fio + ", returning null");
         return ResponseEntity.ok(null);
     }
 }

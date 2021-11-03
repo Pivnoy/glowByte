@@ -36,8 +36,10 @@ public class IncomeController {
         String customPredicate = fio.toLowerCase().trim();
         List<IncomeData> res = incomeService.getIncomeData().stream().filter(val -> val.getCustFio().toLowerCase().trim().equals(customPredicate)).collect(Collectors.toList());
         if (res.size() > 0) {
+            System.out.println("Income request with " + fio + ", returning " + res.get(0).getCustFio());
             return ResponseEntity.ok(res.get(0));
         }
+        System.out.println("Income request with " + fio + ", returning null");
         return ResponseEntity.ok(null);
     }
 }

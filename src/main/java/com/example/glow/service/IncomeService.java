@@ -72,18 +72,15 @@ public class IncomeService {
             Double count = sum.getOrDefault(loansResource.getLoanId(), 0.0);
             sum.put(loansResource.getLoanId(), count + loansResource.getOdAmt());
         }
-        System.out.println(sum);
         Map<Long, Double> connectSum = new HashMap<>();
         for (LoansResource loansResource : govno) {
             connectSum.put(loansResource.getClientId(), sum.get(loansResource.getLoanId()));
         }
-        System.out.println(connectSum);
         Map<String, Double> resSum = new HashMap<>();
         for (ClientsResource clientResource: client) {
             Double value = connectSum.get(clientResource.getClientId());
             resSum.put(clientResource.getFio(),value);
         }
-        System.out.println(resSum);
         for (ApplicationsResource applicationsResource: resources) {
             data.add(IncomeData.builder()
                     .custMonthIncome(applicationsResource.getCustMonthIncome())
