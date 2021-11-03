@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 /**
  * @author Lagus Maksim, Makarev Evgenij
@@ -35,13 +37,32 @@ public class MongoController {
     @GetMapping("/interview")
     @CrossOrigin
     @ResponseBody
-    public ResponseEntity<InterviewResource> getAl(@RequestParam(name = "id") Long id) {
+    public ResponseEntity<InterviewResource> getAl(@RequestParam(name = "fio") String fio) {
         List<InterviewResource> nm = new ArrayList<>(interviewResourceDataService.getAllOutputData());
+        final Integer wordsFromNameMatch = 4;
+        final Integer fioLength = 3;
+        fio = fio.toLowerCase(Locale.ROOT).trim();
+        Pattern patternMatchWords = Pattern.compile(" ");
+        String[] matchedFio = patternMatchWords.split(fio);
+        StringBuilder matchingNameString = new StringBuilder();
+        for (Integer i = 0;i<fioLength;i++){
+            matchingNameString.append(matchedFio[i], 0, wordsFromNameMatch).append(" ");
+        }
+        String normalName;
         for (InterviewResource interviewResource:nm){
-            if (Objects.equals(interviewResource.getId(), id)){
+            normalName = interviewResource.getAnswersOnQuestions().get("I1").toLowerCase().trim();
+            String[] matchedName = patternMatchWords.split(normalName);
+            StringBuilder matchingNormalName = new StringBuilder();
+            Integer index = matchedName.length - fioLength;
+            for (Integer i = index;i < matchedName.length;i++){
+                matchingNormalName.append(matchedName[i],0,wordsFromNameMatch).append(" ");
+            }
+            if (matchingNormalName.toString().equals(matchingNameString.toString())){
+                System.out.println("Interview request with " + fio + ", returning " + interviewResource.getId());
                 return ResponseEntity.ok(interviewResource);
             }
         }
+        System.out.println("Interview request with " + fio + ", returning null");
         return ResponseEntity.ok(null);
     }
 }
