@@ -52,3 +52,9 @@ export type CommonStatistics = {
 }
 
 export type statisticsKeys = keyof CommonStatistics;
+
+export enum DECISIONS {
+    'APPROVED' = 'Система считает клиента надежным',
+    'NOTHING' = 'Примите решенеие самостоятельно',
+    'DENIED' = 'Система считает клиента ненадежным'
+}

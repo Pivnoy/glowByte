@@ -2,12 +2,12 @@
 .Pair {
     
     &-Name {
-        align-self: end;
+        align-self: flex-start;
         color: grey;
         margin-bottom: -11px;
     }
 
     &-Value {
-        align-self: end;
+        align-self: flex-start;
     }
 }

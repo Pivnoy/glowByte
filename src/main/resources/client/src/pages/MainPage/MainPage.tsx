@@ -9,9 +9,9 @@ import { Text } from '../../components/Text';
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import axios from 'axios';
 import { Button } from "@mui/material";
-import { baseUrlFull } from "../../utils/url";
 import { setStatistics } from "../../components/Profile/profileSlice";
 import { Card } from "../../components/Card";
+import { baseUrl } from "../../utils/url";
 
 import './MainPage.scss';
 
@@ -36,7 +36,7 @@ export const MainPage:React.FC = () => {
     } = useAppSelector(state => state.profile);
 
     useEffect(() => {
-        axios(`${baseUrlFull}statistics`)
+        axios(`${baseUrl}statistics`)
             .then(response => dispatch(setStatistics(response.data)));
     }, [])
 
@@ -57,35 +57,44 @@ export const MainPage:React.FC = () => {
                 </Container>
             )
         } else {
+            if (statistics) {
+                return (
+                    <Container className={MainPageStatisticsCn}>
+                        <Container className={MainPageStatisticsRowCn} flexDirection="row">
+                            <Card>
+                                <Text xl>Число клиентов</Text>
+                                <Text xl>{statistics?.clientNumber}</Text>
+                            </Card>
+                            <Card>
+                                <Text xl>Общая сумма задолженности клиентов</Text>
+                                <Text xl>{statistics?.creditSum}</Text>
+                            </Card>
+                        </Container>
+                        <Container className={MainPageStatisticsRowCn} flexDirection="row">
+                            <Card>
+                                <Text xl>Процент наличия поручителей</Text>
+                                <Text xl>
+                                    {statistics?.guarantorPercent && Math.round(statistics?.guarantorPercent * 100) / 100}
+                                </Text>
+                            </Card>
+                            <Card>
+                                <Text xl>Средний доход клиентов</Text>
+                                <Text xl>
+                                    {statistics?.middleIncome && Math.round(statistics?.middleIncome * 100) / 100}
+                                </Text>
+                                
+                            </Card>
+                        </Container>
+                    </Container>
+                )
+            }
             return (
-                <Container className={MainPageStatisticsCn}>
-                    <Container className={MainPageStatisticsRowCn} flexDirection="row">
-                        <Card>
-                            <Text xl>Число клиентов</Text>
-                            <Text xl>{statistics?.clientNumber}</Text>
-                        </Card>
-                        <Card>
-                            <Text xl>Общая сумма задолженности клиентов</Text>
-                            <Text xl>{statistics?.creditSum}</Text>
-                        </Card>
-                    </Container>
-                    <Container className={MainPageStatisticsRowCn} flexDirection="row">
-                        <Card>
-                            <Text xl>Процент наличия поручителей</Text>
-                            <Text xl>
-                                {statistics?.guarantorPercent && Math.round(statistics?.guarantorPercent * 100) / 100}
-                            </Text>
-                        </Card>
-                        <Card>
-                            <Text xl>Средний доход клиентов</Text>
-                            <Text xl>
-                                {statistics?.middleIncome && Math.round(statistics?.middleIncome * 100) / 100}
-                            </Text>
-                            
-                        </Card>
-                    </Container>
-                </Container>
-            )
+                // <>
+                //     <Text xl>Все сломалось!</Text>
+                //     <Text m>Боже, почини бэк...</Text>
+                // </>
+                null
+            );
         }
     }, [statistics, withProfile, withInterviews])
 
