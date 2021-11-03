@@ -7,5 +7,23 @@
     margin-left: 20px;
     margin-right: 10px;
     height: 90vh;
-    width: 44vw;
+    width: fit-content;
+
+    &-Data {
+        margin-right: 10px;
+    }
+
+    &-Card {
+        width: 100%;
+    }
+
+    &-Decision {
+        margin-left: 20px;
+
+        &-Buttons {
+            width: 100%;
+            justify-content: space-between;
+            flex-basis: max-content;
+        }
+    }
 }
