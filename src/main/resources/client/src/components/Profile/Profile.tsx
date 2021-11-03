@@ -9,7 +9,6 @@ import { Text } from '../Text';
 import { Card } from "../Card";
 import { Pair } from "../Card/Pair";
 import { useAppSelector } from "../../hooks/hooks";
-import type { ProfileBase } from '../Profile/types';
 import { baseKeys, loanKeys, incomeKeys, DECISIONS } from "./types";
 
 import './Profile.scss'
@@ -19,18 +18,9 @@ const profileDataCn = cnProfile('Data');
 const profileCardcn = cnProfile('Card');
 const profileDecisionCn = cnProfile('Decision');
 const profileDecisionButtonsCn = cnProfile('Decision-Buttons');
-
 const profileCn = cnProfile();
 
-interface IProfileProps {
-}
-// 5001
-
-// function bullshitingBuilder<T> (keys: string[], jopa: T, profileKey: ProfileState) {
-
-// }
-
-export const Profile: React.FC<IProfileProps> = () => {
+export const Profile: React.FC = () => {
     const { 
         base,
         loan,
@@ -42,7 +32,6 @@ export const Profile: React.FC<IProfileProps> = () => {
 
 
     const renderPerson = useCallback(() => {
-        console.log(`base ${base}`);
         const keys = ['фио', 'id', 'дата рождения', 'инн'];
         const jopa: baseKeys[] = ['custFio', 'custId', 'custBirth', 'custInn'];
         return (
@@ -81,7 +70,7 @@ export const Profile: React.FC<IProfileProps> = () => {
 
     const renderIncome = useCallback(() => {
         const keys = ['Ежемесячный дохода заявителя', 'Ежемесячного дохода семьи заявителя', 'Количество кредитов', 'Сумма кредитов'];
-        const jopa: incomeKeys[] = ['custMonthIncome', 'custFamilyMonthIncome', 'creditCounts', 'creditSum'];
+        const jopa: incomeKeys[] = ['custMonthIncome', 'custFamilyMonthIncome', 'creditsCounts', 'creditSum'];
         return (
             <>
                 {income && (

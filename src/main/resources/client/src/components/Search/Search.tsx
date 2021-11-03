@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { cn } from "@bem-react/classname";
 import { IClassNameProps } from "@bem-react/core";
 import { Button } from '@mui/material';
-import { Search as SearchIcon } from '@mui/icons-material';
+import { RestorePageSharp, Search as SearchIcon } from '@mui/icons-material';
 import { CleanHands } from '@mui/icons-material';
 import { baseUrl } from "../../utils/url";
 import { setInterviews } from '../Interviews/interviewsSlice';
@@ -53,7 +53,16 @@ export const Search: React.FC = () => {
 
 
         sendFIORequest('interview')
-            .then(response => dispatch(setInterviews(response.data)));
+            .then(response => {
+                if (response.data === '') {
+                    throw Error;
+                }
+                const arrayOfInterviews = Array.isArray(response.data) ? response.data : [response.data];
+                dispatch(setInterviews(arrayOfInterviews))
+            })
+            .catch(() => {
+                alert('Юзер не найден!');
+            });
     }, [name])
 
     const reset = useCallback(() => {
