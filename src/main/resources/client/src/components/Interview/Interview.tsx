@@ -30,25 +30,13 @@ export const Interview: React.FC<IInterviewProps> = (props) => {
     const { id, preview = false, interview, onClick } = props;
 
     const renderInterviewHeader = useCallback(() => {
-        const keys = Object.keys(interview.aspects) as Array<keyof Aspects>;
         return (
             <>
                 <Header>
                     <Text>id: {interview.id}</Text>
                     <Text>{interview.interviewDatetime}</Text>
                 </Header>
-                <Container className={interviewProgressesCn}>
-                    {keys.map((key) => {
-                        return (
-                            <ProgressBar 
-                                className={interviewProgressBarCn}
-                                variant={aspectsWithi18nColor[key].color}
-                                now={interview.aspects[key]}
-                                label={`${aspectsWithi18nColor[key].name}: ${interview.aspects[key]}`} 
-                            />
-                        )
-                    })}
-                </Container>
+                
             </>
         )
     }, [interview])
@@ -63,9 +51,23 @@ export const Interview: React.FC<IInterviewProps> = (props) => {
     }, [interview])
 
     const renderFullInterview = useCallback(() => {
+        const keys = Object.keys(interview.aspects) as Array<keyof Aspects>;
         return (
             <>
                 {renderInterviewHeader()}
+                <Container className={interviewProgressesCn}>
+                    {keys.map((key) => {
+                        return (
+                            <ProgressBar 
+                                animated
+                                className={interviewProgressBarCn}
+                                variant={aspectsWithi18nColor[key].color}
+                                now={interview.aspects[key]}
+                                label={`${aspectsWithi18nColor[key].name}: ${interview.aspects[key]}`} 
+                            />
+                        )
+                    })}
+                </Container>
                 <Chat dialog={interview.answersOnQuestions}/>
             </>
         )
