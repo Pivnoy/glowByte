@@ -19,8 +19,6 @@ const pairValueCn = cnPair('Value');
 export const Pair: React.FC<IPairProps> = (props) => {
     const { name, value } = props;
 
-    console.log(`pair: ${name} ${value}`);
-
     return (
         <Container className={pairCn}>
             <Text s className={pairNameCn}>{name}</Text>

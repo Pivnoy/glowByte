@@ -22,7 +22,7 @@ export type ProfileIncome = {
     custFio: string,
     custMonthIncome: number,
     custFamilyMonthIncome: number,
-    creditCounts: number,
+    creditsCounts: number,
     creditSum: number
 }
 

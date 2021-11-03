@@ -3,8 +3,8 @@ import { Interview } from "../Interview/types";
 import { interviewPlaceholder } from '../../utils/interviewPlaceholder';
 
 interface InterviewsState {
-    interviews: Interview[]
-    chosenInterview?: number
+    interviews: Interview[],
+    chosenInterview?: number,
 }
 
 // const initialState: InterviewsState = {
@@ -23,6 +23,14 @@ const initialState: InterviewsState = {
                 'I2': 'Мы не дадим вам кредит, грубиян',
                 'A2': 'Ваще до пизды, микрозайм возьму!',
             },
+            aspects: {
+                aggressiveness: 30,
+                politeness: 90,
+                authority: 60,
+                manipulativeness: 20,
+                specifics: 67,
+                brevity: 43
+            }
         },
     ],
 };

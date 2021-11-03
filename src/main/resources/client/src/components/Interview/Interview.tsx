@@ -3,10 +3,12 @@ import { cn } from "@bem-react/classname";
 import { Container } from "../Container";
 import { Header } from '../Header';
 import { Text } from '../Text';
-import { Interview as InterviewType } from './types';
+import { Aspects, Interview as InterviewType } from './types';
+import { ProgressBar } from "react-bootstrap";
+import { Chat } from "./Chat/Chat";
+import { aspectsWithi18nColor } from "./types";
 
 import './Interview.scss';
-import { Chat } from "./Chat/Chat";
 
 interface IInterviewProps {
     id: number
@@ -17,17 +19,44 @@ interface IInterviewProps {
 
 const cnInterview = cn('Interview');
 const interviewCn = cnInterview();
+const interviewProgressesCn = cnInterview('Progresses');
+const interviewProgressBarCn = cnInterview('ProgressBar');
+
+function isAspects() {
+
+}
 
 export const Interview: React.FC<IInterviewProps> = (props) => {
     const { id, preview = false, interview, onClick } = props;
 
-    const renderInterviewPreview = useCallback(() => {
+    const renderInterviewHeader = useCallback(() => {
+        const keys = Object.keys(interview.aspects) as Array<keyof Aspects>;
         return (
             <>
                 <Header>
                     <Text>id: {interview.id}</Text>
                     <Text>{interview.interviewDatetime}</Text>
                 </Header>
+                <Container className={interviewProgressesCn}>
+                    {keys.map((key) => {
+                        return (
+                            <ProgressBar 
+                                className={interviewProgressBarCn}
+                                variant={aspectsWithi18nColor[key].color}
+                                now={interview.aspects[key]}
+                                label={`${aspectsWithi18nColor[key].name}: ${interview.aspects[key]}`} 
+                            />
+                        )
+                    })}
+                </Container>
+            </>
+        )
+    }, [interview])
+
+    const renderInterviewPreview = useCallback(() => {
+        return (
+            <>
+                {renderInterviewHeader()}
                 <Chat preview dialog={interview.answersOnQuestions}/>
             </>
         )
@@ -36,10 +65,7 @@ export const Interview: React.FC<IInterviewProps> = (props) => {
     const renderFullInterview = useCallback(() => {
         return (
             <>
-                <Header>
-                    <Text>id: {interview.id}</Text>
-                    <Text>{interview.interviewDatetime}</Text>
-                </Header>
+                {renderInterviewHeader()}
                 <Chat dialog={interview.answersOnQuestions}/>
             </>
         )
@@ -52,6 +78,8 @@ export const Interview: React.FC<IInterviewProps> = (props) => {
     const onInterviewClick = useCallback(() => {
         onClick && onClick(id);
     }, [])
+
+    console.log("in interview preview render");
 
     return (
         <Container 

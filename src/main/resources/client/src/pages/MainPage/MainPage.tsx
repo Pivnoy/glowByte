@@ -45,11 +45,16 @@ export const MainPage:React.FC = () => {
     }, [base, loan, income, guarantor, pledge]);
 
     const withInterviews = useCallback(() => {
-        return interviews.length > 0
+        console.log('withInterviews:');
+        console.log(interviews.length > 0 || Boolean(interviews[0]?.id));
+        return interviews.length > 0 && Boolean(interviews[0]?.id);
     }, [interviews]);
 
     const renderMainPage = useCallback(() => {
         if (withProfile() || withInterviews()) {
+
+            console.log("in render main page");
+            console.log(interviews);
             return (
                 <Container flexDirection="row" className={MainPageUserDataCn}>
                     {withProfile() && <Profile />}
