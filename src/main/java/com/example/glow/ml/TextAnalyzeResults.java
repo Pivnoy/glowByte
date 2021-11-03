@@ -11,9 +11,10 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class TextAnalyzeResults {
-    private float confidence;
-    private float perseverance;
-    private float friendliness;
-    private float aggressiveness;
-    private float politeness;
+    private int aggressiveness;
+    private int politeness;
+    private int authority;
+    private int manipulativeness;
+    private int specifics;
+    private int brevity;
 }
