@@ -21,7 +21,7 @@ export const aspectsWithi18nColor  = {
     politeness: {name: 'Вежливость', color: 'success'},
     authority: {name: 'Авторитетность', color: 'info'},
     manipulativeness: {name: 'Манипулятивность', color: 'warning'},
-    specifics: {name: 'Конкретика', color: 'darkmagenta'},
-    brevity: {name: 'Лаконичность', color: 'lightcoral'},
+    specifics: {name: 'Конкретика', color: 'success'},
+    brevity: {name: 'Лаконичность', color: 'info'},
 }
 
