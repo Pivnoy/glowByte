@@ -160,7 +160,7 @@ export const Profile: React.FC = () => {
         }
 
         switch(decision) {
-            case "APPROVED":
+            case "APPROVE":
                 return (
                     <Button onClick={onApproveClick} startIcon={<TaskAlt />} variant="contained" color="success">Выдать кредит</Button>
                 )
@@ -186,7 +186,13 @@ export const Profile: React.FC = () => {
                 )
             case "DENIED":
                 return (
-                    <Button startIcon={<Error />} variant="contained" color="error">Отказать</Button>
+                    <Button
+                        onClick={onApproveClick} 
+                        startIcon={<Error />}
+                        variant="contained"
+                        color="error">
+                            Отказать
+                    </Button>
                 )
 
             default:

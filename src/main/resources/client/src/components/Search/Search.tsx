@@ -69,7 +69,7 @@ export const Search: React.FC = () => {
                     return {
                         ...interview,
                         aspects: {
-                            aggressiveness: getRandomArbitrary(45, 95),
+                            aggressiveness: getRandomArbitrary(28, 30),
                             politeness: getRandomArbitrary(45, 95),
                             authority: getRandomArbitrary(45, 95),
                             manipulativeness: getRandomArbitrary(45, 95),
