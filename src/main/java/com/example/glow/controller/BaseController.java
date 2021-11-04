@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
-<<<<<<< HEAD
+
 /**
  * @author Lagus Maksim, Makarev Evgenij
  * @version 1.0
@@ -19,8 +19,7 @@ import java.util.stream.Collectors;
  * get methods from multiple CRUD repositories and connecting
  * backend and local host server via mapping
  */
-=======
->>>>>>> d89e0f175f4666bd0df5121d7a988e3b016e233f
+
 @RestController
 public class BaseController {
 
