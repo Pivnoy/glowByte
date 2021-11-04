@@ -16,6 +16,7 @@ public class ChooserXGBoost implements Chooser {
 
     @Override
     public ClientLoanApprove chooseForClient(ClientForm form) {
-        return new ClientLoanApprove();
+        int i = form.getCustFio().hashCode();
+        return new ClientLoanApprove((i % 3));
     }
 }

@@ -12,12 +12,12 @@ public class TextAnalyzerXLNet implements TextAnalyzer {
 
     @Override
     public TextAnalyzeResults analyzeText(TextEntity text) {
-        int aggressiveness = random.nextInt(100);
-        int politeness = random.nextInt(100);
-        int authority = random.nextInt(100);
-        int manipulativeness = random.nextInt(100);
-        int specifics = random.nextInt(100);
-        int brevity = random.nextInt(100);
+        int aggressiveness = text.hashCode() % 100;
+        int politeness = Integer.toBinaryString(aggressiveness).hashCode() % 100;
+        int authority = Integer.toBinaryString(politeness).hashCode() % 100;
+        int manipulativeness = Integer.toBinaryString(authority).hashCode() % 100;
+        int specifics = Integer.toBinaryString(manipulativeness).hashCode() % 100;
+        int brevity = Integer.toBinaryString(specifics).hashCode() % 100;
         return new TextAnalyzeResults(aggressiveness, politeness, authority, manipulativeness, specifics, brevity);
     }
 }
