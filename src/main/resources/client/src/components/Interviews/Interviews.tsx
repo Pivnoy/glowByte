@@ -6,11 +6,8 @@ import { Interview } from "../Interview";
 import { Header } from "../Header";
 import { Button } from "../Button/";
 import { Text } from '../Text';
-import { Interview as InterviewType } from '../Interview/types';
-import { interviewPlaceholder } from "../../utils/interviewPlaceholder";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { setInterviews } from "./interviewsSlice";
-import { show, close } from '../Modal/modalSlice';
+import { show, close, setChidren } from '../Modal/modalSlice';
 
 import './Interviews.scss';
 
@@ -25,17 +22,18 @@ const interviewsCn = cnInterviews();
 export const Interviews: React.FC<IInterviewsProps> = () => {
     const [ chosenInterview, setChosenInterview ] = useState(0);
     const { interviews } = useAppSelector(state => state.interviews);
-    const { open } = useAppSelector(state => state.modal);
     const dispatch = useAppDispatch();
 
     const onInterviewClick = useCallback((id: number) => {
         setChosenInterview(id);
         dispatch(show());
-    }, [])
-
-    const onModalClose = useCallback(() => {
-        dispatch(close());
-    }, [close, dispatch])
+        dispatch(setChidren(
+        <Interview 
+            id={chosenInterview}
+            interview={interviews[chosenInterview]}
+            onClick={onInterviewClick}
+        />))
+    }, [dispatch, chosenInterview, interviews])
 
     const onShowAllClick = useCallback(() => {
 
@@ -56,28 +54,16 @@ export const Interviews: React.FC<IInterviewsProps> = () => {
     }, [interviews, onShowAllClick])
 
     return (
-        <>
-            <Modal
-                open={open}
-                onClose={onModalClose}
-            >
+        <Container className={interviewsCn}>
+            {renderHeader()}
+            {interviews.map((interview, i) => (
                 <Interview 
-                    id={chosenInterview}
-                    interview={interviews[chosenInterview]}
+                    id={i}
+                    preview
+                    interview={interview}
                     onClick={onInterviewClick}
                 />
-            </Modal>
-            <Container className={interviewsCn}>
-                {renderHeader()}
-                {interviews.map((interview, i) => (
-                    <Interview 
-                        id={i}
-                        preview
-                        interview={interview}
-                        onClick={onInterviewClick}
-                    />
-                ))}
-            </Container>
-        </>
+            ))}
+        </Container>
     )
 }
