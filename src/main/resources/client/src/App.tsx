@@ -7,6 +7,7 @@ import { useAppSelector, useModalClose } from "./hooks/hooks";
 import { AllPages } from "./pages/pages";
 
 import './index.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App: React.FC = () => {
     const { page } = useAppSelector(state => state.pages);

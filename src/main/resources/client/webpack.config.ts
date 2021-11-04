@@ -21,7 +21,7 @@ const config: Configuration = {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(s[ac]ss|css)$/i,
         use: [
           // Creates `style` nodes from JS strings
           "style-loader",

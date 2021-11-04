@@ -11,6 +11,7 @@ const initialState: InterviewsState = {
     interviews: [],
 }
 
+// /* это плейсхолдер, если вы это увидились, не думайте, что я странный, просто бэкэнд лежал и я ругався*/
 // const initialState: InterviewsState = {
 //     interviews: [
 //         {

@@ -187,7 +187,7 @@ export const Profile: React.FC = () => {
             case "DENIED":
                 return (
                     <Button
-                        onClick={onApproveClick} 
+                        onClick={onDeniyClick} 
                         startIcon={<Error />}
                         variant="contained"
                         color="error">
