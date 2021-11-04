@@ -8,8 +8,11 @@ import { Container } from "../Container";
 import { Text } from '../Text';
 import { Card } from "../Card";
 import { Pair } from "../Card/Pair";
-import { useAppSelector } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector, useModalClose, useModalShow, useReset } from "../../hooks/hooks";
 import { baseKeys, loanKeys, incomeKeys, DECISIONS } from "./types";
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
+import { setChidren } from "../Modal/modalSlice";
 
 import './Profile.scss'
 
@@ -30,6 +33,11 @@ export const Profile: React.FC = () => {
         decision
     } = useAppSelector(state => state.profile);
 
+    const dispatch = useAppDispatch();
+    const reset = useReset();
+
+    const closeModal = useModalClose();
+    const onModalShow = useModalShow();
 
     const renderPerson = useCallback(() => {
         const keys = ['фио', 'id', 'дата рождения', 'инн'];
@@ -123,17 +131,57 @@ export const Profile: React.FC = () => {
     }, [pledge])
 
     const renderButtons = useCallback(() => {
+        const onApproveClick = () => {
+            dispatch(setChidren(
+                <>
+                    <ThumbUpIcon color="primary" />
+                    <Text xl b> Кредит успешно выдан!</Text>
+                </>
+            ));
+            onModalShow();
+            setTimeout(() => {
+                reset();
+                closeModal();
+            }, 2500)
+        }
+
+        const onDeniyClick = () => {
+            dispatch(setChidren(
+                <>
+                    <CancelPresentationIcon color="primary"/>
+                    <Text xl b>Клиенту отказано!</Text>
+                </>
+            ));
+            onModalShow()
+            setTimeout(() => {
+                reset();
+                closeModal();
+            }, 2500)
+        }
+
         switch(decision) {
             case "APPROVED":
                 return (
-                    <Button startIcon={<TaskAlt />} variant="contained" color="success">Выдать кредит</Button>
+                    <Button onClick={onApproveClick} startIcon={<TaskAlt />} variant="contained" color="success">Выдать кредит</Button>
                 )
                 break;
             case "NOTHING":
                 return (
                     <Container className={profileDecisionButtonsCn} flexDirection="row">
-                        <Button startIcon={<TaskAlt />} variant="contained" color="success">Выдать кредит</Button>
-                        <Button startIcon={<Error />} variant="contained" color="error">Отказать</Button>
+                        <Button
+                            onClick={onApproveClick}
+                            startIcon={<TaskAlt />}
+                            variant="contained"
+                            color="success">
+                                Выдать кредит
+                        </Button>
+                        <Button
+                            onClick={onDeniyClick}
+                            startIcon={<Error />}
+                            variant="contained"
+                            color="error">
+                                Отказать
+                        </Button>
                     </Container>
                 )
             case "DENIED":

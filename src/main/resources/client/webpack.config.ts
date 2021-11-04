@@ -42,17 +42,17 @@ const config: Configuration = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "static"),
     filename: "bundle.js",
   },
   devServer: {
-    static: path.join(__dirname, "build"),
+    static: path.join(__dirname, "static"),
     compress: true,
     port: 4022,
   },
   plugins: [
     new HtmlWebpackPlugin({
-        template: path.join(__dirname, 'build', 'index.html')
+        template: path.join(__dirname, 'static', 'index.html')
     })
   ],
 };
