@@ -2,9 +2,9 @@ import React, { useCallback } from "react";
 import { cn } from '@bem-react/classname';
 import { IClassNameProps } from '@bem-react/core';
 import { Container } from '../../Container';
+import { Message } from "./Message/Message";
 
 import './Chat.scss';
-import { Message } from "./Message/Message";
 
 interface IChatProps extends IClassNameProps {
     dialog: any,
@@ -12,14 +12,12 @@ interface IChatProps extends IClassNameProps {
 }
 
 const cnChat = cn('Chat');
+const chatCn = cnChat();
 
 export const Chat: React.FC<IChatProps> = (props) => {
     const { dialog, preview = false } = props;
 
     const renderChat = useCallback(() => {
-        console.log('here')
-        console.log(Object.keys(dialog));
-
         // const zeroExists = dialog['I0'] || dialog['A0'];
 
         const firstTurn = Boolean(dialog['I0']);
@@ -55,8 +53,6 @@ export const Chat: React.FC<IChatProps> = (props) => {
             messages.push(second);
         }
 
-        console.log(messages.length)
-
         return (
             <>
                 {/* {firstMessage} */}
@@ -66,7 +62,7 @@ export const Chat: React.FC<IChatProps> = (props) => {
     }, [dialog])
 
     return (
-        <Container flexDirection="column">
+        <Container className={chatCn} flexDirection="column">
             {renderChat()}
         </Container>
     )

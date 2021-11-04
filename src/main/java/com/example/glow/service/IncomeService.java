@@ -16,12 +16,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+<<<<<<< HEAD
 /**
  * @author Lagus Maksim, Makarev Evgenij
  * @version 1.0
  * Service to get list of data from database
  * and pack it into java class to use further
  */
+=======
+
+>>>>>>> d89e0f175f4666bd0df5121d7a988e3b016e233f
 @Service
 public class IncomeService {
 
@@ -37,11 +41,15 @@ public class IncomeService {
         this.clientsResourceCrudRepository = clientsResourceCrudRepository;
         this.loansResourceCrudRepository = loansResourceCrudRepository;
     }
+<<<<<<< HEAD
     /**
      * Calculate multiple data from different mySql tables,
      * and combine them together
      * @return list of calculated information for bank
      */
+=======
+
+>>>>>>> d89e0f175f4666bd0df5121d7a988e3b016e233f
     public List<IncomeData> getIncomeData() {
         List<ApplicationsResource> resources = new ArrayList<>();
         List<LoanBalanceResource> loansResources = new ArrayList<>();

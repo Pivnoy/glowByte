@@ -1,0 +1,12 @@
+
+.Picture {
+    background-image: url('../../photos/dudes.jpg');
+
+    width: 85vw;
+    height: 100vh;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

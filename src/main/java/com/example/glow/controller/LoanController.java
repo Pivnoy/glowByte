@@ -3,11 +3,16 @@ package com.example.glow.controller;
 import com.example.glow.controller.dto.LoansData;
 import com.example.glow.entity.postgreSql.ApplicationsResource;
 import com.example.glow.service.LoanDataResourceDataService;
+<<<<<<< HEAD
+=======
+import com.example.glow.service.LoansResourceDataService;
+>>>>>>> d89e0f175f4666bd0df5121d7a988e3b016e233f
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +23,12 @@ import java.util.stream.Collectors;
  * get methods from multiple CRUD repositories and connecting
  * backend and local host server via mapping
  */
+=======
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+>>>>>>> d89e0f175f4666bd0df5121d7a988e3b016e233f
 @RestController
 public class LoanController {
 
@@ -36,10 +47,17 @@ public class LoanController {
         List<ApplicationsResource> coll = loanDataResourceDataService.getAll();
         List<LoansData> result = new ArrayList<>();
         for (ApplicationsResource applicationsResource: coll) {
+<<<<<<< HEAD
             result.add(LoansData.builder()
                     .appId(applicationsResource.getAppId())
                     .custFio(applicationsResource.getCustFio().trim())
                     .appDate(applicationsResource.getAppDate())
+=======
+            result.add(LoansData.builder().
+                    appId(applicationsResource.getAppId())
+                            .custFio(applicationsResource.getCustFio().trim())
+                            .appDate(applicationsResource.getAppDate())
+>>>>>>> d89e0f175f4666bd0df5121d7a988e3b016e233f
                     .credAmount(applicationsResource.getCredAmount())
                     .credTerm(applicationsResource.getCredTerm())
                     .credObject(applicationsResource.getCredObject().trim()).build());

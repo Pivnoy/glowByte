@@ -14,12 +14,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+<<<<<<< HEAD
 /**
  * @author Lagus Maksim, Makarev Evgenij
  * @version 1.0
  * Service to get list of data from database
  * and pack it into java class to use further
  */
+=======
+>>>>>>> d89e0f175f4666bd0df5121d7a988e3b016e233f
 @Service
 public class BaseService {
 
@@ -34,11 +37,14 @@ public class BaseService {
         this.clientBirthDtResourceCrudRepository = clientBirthDtResourceCrudRepository;
     }
 
+<<<<<<< HEAD
     /**
      * Native sql get method implemented with CRUD rep
      * @return list of matched Fio, Id, Birth and Inn data
      */
 
+=======
+>>>>>>> d89e0f175f4666bd0df5121d7a988e3b016e233f
     public List<BaseData> getData() {
         List<BaseData> data = new ArrayList<>();
         List<ClientFioResource> fio = new ArrayList<>();
@@ -54,7 +60,11 @@ public class BaseService {
                     data.add(BaseData.builder().
                             custFio(fio.get(i).getClientFio())
                             .custId(fio.get(i).getClientId())
+<<<<<<< HEAD
                             .custBirth(birthDt.get(i).getClientBirthDt())
+=======
+                            .custBirth(birthDt.get(i).getClientBirthDt().getTime())
+>>>>>>> d89e0f175f4666bd0df5121d7a988e3b016e233f
                             .custInn(inn.get(i).getClientInn()).build());
                 }
             }

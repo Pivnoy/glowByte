@@ -1,0 +1,19 @@
+
+.Search {
+    padding: 3px;
+    margin-left: 10px;
+    outline: 1px solid #6ab6ef;
+
+    &-Input[type='text'] {
+        height: 100%;
+        width: 300px;
+
+        font-size: 18px;
+
+        border: 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
