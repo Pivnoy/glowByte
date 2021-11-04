@@ -3,9 +3,12 @@ package com.example.glow.ml.chooserimpl;
 import com.example.glow.ml.Chooser;
 import com.example.glow.ml.ClientForm;
 import com.example.glow.ml.ClientLoanApprove;
+import lombok.extern.apachecommons.CommonsLog;
+import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
+@Component
 public class ChooserXGBoost implements Chooser {
 
     private static Random random = new Random();
