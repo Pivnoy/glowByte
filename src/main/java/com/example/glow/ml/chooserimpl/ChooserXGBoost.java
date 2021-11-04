@@ -4,6 +4,7 @@ import com.example.glow.ml.Chooser;
 import com.example.glow.ml.ClientForm;
 import com.example.glow.ml.ClientLoanApprove;
 import lombok.extern.apachecommons.CommonsLog;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
@@ -15,6 +16,6 @@ public class ChooserXGBoost implements Chooser {
 
     @Override
     public ClientLoanApprove chooseForClient(ClientForm form) {
-        return ClientLoanApprove.values()[random.nextInt(3)];
+        return new ClientLoanApprove();
     }
 }
