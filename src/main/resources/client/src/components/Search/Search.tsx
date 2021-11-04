@@ -7,8 +7,8 @@ import { CleanHands } from '@mui/icons-material';
 import { baseUrl } from "../../utils/url";
 import { setInterviews } from '../Interviews/interviewsSlice';
 import axios from "axios";
-import { useAppDispatch } from "../../hooks/hooks";
-import { setBase, setLoan, setIncome, setGuarantor, setPledge } from "../Profile/profileSlice";
+import { useAppDispatch, useReset } from "../../hooks/hooks";
+import { setBase, setLoan, setIncome, setGuarantor, setPledge, setDecision } from "../Profile/profileSlice";
 
 import './Search.scss';
 
@@ -17,8 +17,13 @@ const searchCn = cnSearch();
 const searchInputCn = cnSearch('Input');
 const searchButtonCn = cnSearch('Button');
 
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
 export const Search: React.FC = () => {
     const dispatch = useAppDispatch();
+    const reset = useReset();
     const [name, setName] = useState('');
 
     const onInputChange = (e: any) => {
@@ -48,8 +53,10 @@ export const Search: React.FC = () => {
         sendFIORequest('guarantor')
             .then(response => dispatch(setGuarantor(response.data)));
 
-        // sendFIORequest('pledge')
-        //     .then(response => dispatch(setPledge(response.data)));
+        setTimeout(() => {
+            sendFIORequest('decision')
+                .then(response => dispatch(setDecision(response.data)));
+        }, 1000)
 
 
         sendFIORequest('interview')
@@ -57,21 +64,26 @@ export const Search: React.FC = () => {
                 if (response.data === '') {
                     throw Error;
                 }
-                const arrayOfInterviews = Array.isArray(response.data) ? response.data : [response.data];
+                let arrayOfInterviews = Array.isArray(response.data) ? response.data : [response.data];
+                arrayOfInterviews = arrayOfInterviews.map(interview => {
+                    return {
+                        ...interview,
+                        aspects: {
+                            aggressiveness: getRandomArbitrary(45, 95),
+                            politeness: getRandomArbitrary(45, 95),
+                            authority: getRandomArbitrary(45, 95),
+                            manipulativeness: getRandomArbitrary(45, 95),
+                            specifics: getRandomArbitrary(45, 95),
+                            brevity: getRandomArbitrary(45, 95),
+                        }
+                    }
+                })
                 dispatch(setInterviews(arrayOfInterviews))
             })
             .catch(() => {
                 alert('Юзер не найден!');
             });
     }, [name])
-
-    const reset = useCallback(() => {
-        dispatch(setInterviews([]));
-        dispatch(setBase(null));
-        dispatch(setLoan(null));
-        dispatch(setIncome(null));
-        dispatch(setGuarantor(null));
-    }, [dispatch]);
 
     return (
         <div className={searchCn}>

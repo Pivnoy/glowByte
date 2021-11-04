@@ -4,7 +4,7 @@ export type Interview = {
     appId: number,
     answersOnQuestions: any,
 
-    aspects: Aspects
+    aspects?: Aspects
 }
 
 export type Aspects = {
